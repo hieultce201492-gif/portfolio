@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Lương Trung Hiếu</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Inter & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #333333;
+      background-color: #f3f4f6;
+    }
+    
+    .font-heading {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Print styles for exact PDF rendering */
+    @media print {
+      body {
+        background-color: white !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .cv-container {
+        box-shadow: none !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+    }
+
+    /* Custom pill header with trailing line */
+    .section-tag-wrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.85rem;
+    }
+
+    .section-tag {
+      background-color: transparent;
+      border: 1.5px solid #999999;
+      border-radius: 9999px;
+      padding: 0.25rem 1.25rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      font-size: 0.85rem;
+      color: #2b2b2b;
+      white-space: nowrap;
+    }
+
+    .section-tag-line {
+      flex-grow: 1;
+      height: 1px;
+      background-color: #a0a0a0;
+      margin-left: 0.75rem;
+    }
+
+    /* Timeline styles */
+    .timeline-container {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      bottom: 12px;
+      left: 5px;
+      width: 1.5px;
+      background-color: #777777;
+    }
+
+    .timeline-node {
+      position: absolute;
+      left: -1.5rem;
+      top: 5px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background-color: white;
+      border: 2px solid #555555;
+    }
+  </style>
+</head>
+<body class="py-6 px-2 sm:px-4 flex flex-col items-center min-h-screen">
+
+  <!-- Floating Print & Export Action Bar -->
+  <div class="no-print mb-4 flex gap-3">
+    <button onclick="window.print()" class="bg-gray-800 hover:bg-black text-white px-5 py-2 rounded-full font-medium shadow-md transition-all flex items-center gap-2">
+      <i class="fa-solid fa-print"></i> Print / Save as PDF
+    </button>
+  </div>
+
+  <!-- CV Main Container - Responsive A4 Proportion -->
+  <div class="cv-container w-full max-w-[850px] bg-white shadow-2xl overflow-hidden flex flex-col md:flex-row relative">
+
+    <!-- LEFT SIDEBAR -->
+    <div class="w-full md:w-[38%] bg-[#e5e5e5] text-[#333333] flex flex-col pt-6 pb-8 px-6 relative z-10">
+      
+      <!-- Avatar Section (Top left intersecting main banner) -->
+      <div class="flex justify-center md:justify-start mb-6">
+        <div class="w-36 h-36 sm:w-40 sm:h-40 rounded-full border-4 border-white overflow-hidden shadow-md bg-gray-200 shrink-0">
+          <img src="https://placehold.co/400x400/d0d0d0/333333?text=Avatar+Photo" 
+               alt="Lương Trung Hiếu" 
+               class="w-full h-full object-cover"
+               onerror="this.src='https://placehold.co/400x400/cccccc/666666?text=Lương+Trung+Hiếu'">
+        </div>
+      </div>
+
+      <!-- Left Sidebar Content Sections -->
+      <div class="space-y-6 text-sm text-[#444444] leading-relaxed">
+        
+        <!-- OBJECTIVE -->
+        <div>
+          <div class="section-tag-wrapper">
+            <span class="section-tag">OBJECTIVE</span>
+            <div class="section-tag-line"></div>
+          </div>
+          <p class="text-[0.82rem] leading-normal text-justify text-gray-700">
+            Software Engineering student at FPT University with interest in software development and backend technologies. Seeking an Intern/Fresher Software Developer position to apply programming skills, gain practical experience, and contribute to real-world projects.
+          </p>
+        </div>
+
+        <!-- EDUCATION -->
+        <div>
+          <div class="section-tag-wrapper">
+            <span class="section-tag">EDUCATION</span>
+            <div class="section-tag-line"></div>
+          </div>
+          <div class="space-y-1">
+            <h3 class="font-bold text-gray-800 text-[0.92rem]">FPT University</h3>
+            <p class="font-semibold text-gray-700 text-[0.83rem]">IT student – Software Engineering</p>
+            <p class="text-xs text-gray-500 mt-2">2024 – Present</p>
+          </div>
+        </div>
+
+        <!-- SKILLS -->
+        <div>
+          <div class="section-tag-wrapper">
+            <span class="section-tag">SKILLS</span>
+            <div class="section-tag-line"></div>
+          </div>
+          <div class="space-y-2 text-[0.82rem] text-gray-700">
+            <p><span class="font-bold text-gray-800">Programming:</span> C, Java</p>
+            <p><span class="font-bold text-gray-800">Web:</span> HTML, CSS, JavaScript</p>
+            <p><span class="font-bold text-gray-800">Database:</span> MySQL</p>
+            <p><span class="font-bold text-gray-800">Tools:</span> Git, GitHub, VS Code, IntelliJ IDEA</p>
+            <p><span class="font-bold text-gray-800">Other:</span> Problem Solving, Teamwork</p>
+          </div>
+        </div>
+
+        <!-- LANGUAGE -->
+        <div>
+          <div class="section-tag-wrapper">
+            <span class="section-tag">LANGUAGE</span>
+            <div class="section-tag-line"></div>
+          </div>
+          <ul class="list-disc list-inside space-y-1 text-[0.82rem] text-gray-700">
+            <li><span class="font-medium">English:</span> Basic</li>
+            <li><span class="font-medium">Japanese:</span> Basic (JLPT N5 – in progress)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT MAIN COLUMN -->
+    <div class="w-full md:w-[62%] bg-white flex flex-col justify-between">
+      
+      <!-- Top Dark Header Banner -->
+      <div class="bg-[#2d2d2d] text-white pt-8 pb-7 px-8 flex flex-col justify-center min-h-[120px]">
+        <h1 class="font-heading text-2xl sm:text-3xl font-bold tracking-[0.18em] uppercase text-white">
+          LƯƠNG TRUNG HIẾU
+        </h1>
+        <p class="font-heading text-base sm:text-lg text-gray-300 tracking-[0.12em] font-light mt-1">
+          Software Engineering
+        </p>
+      </div>
+
+      <!-- Main Body Right Column -->
+      <div class="p-6 sm:p-8 space-y-6 flex-grow">
+
+        <!-- Contact Information Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-700 pb-2">
+          
+          <!-- Phone -->
+          <div class="flex items-center gap-2.5">
+            <div class="w-6 h-6 bg-[#2d2d2d] text-white flex items-center justify-center rounded-sm text-xs shrink-0">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <span class="font-medium">0985360352</span>
+          </div>
+
+          <!-- Top Right Special Interests / Badges -->
+          <div class="flex items-start gap-2.5 sm:row-span-2">
+            <div class="w-6 h-6 bg-[#2d2d2d] text-white flex items-center justify-center rounded-sm text-xs shrink-0 mt-0.5">
+              <i class="fa-solid fa-laptop"></i>
+            </div>
+            <div class="space-y-0.5 text-[0.78rem] leading-tight">
+              <p class="font-semibold text-gray-800 underline">Software Engineering</p>
+              <p class="font-semibold text-gray-800 underline">User Experience Research and Design</p>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="flex items-center gap-2.5">
+            <div class="w-6 h-6 bg-[#2d2d2d] text-white flex items-center justify-center rounded-sm text-xs shrink-0">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <span class="font-medium break-all">hieultce201492@gmail.com</span>
+          </div>
+
+          <!-- Location -->
+          <div class="flex items-start gap-2.5 sm:col-start-2">
+            <div class="w-6 h-6 bg-[#2d2d2d] text-white flex items-center justify-center rounded-sm text-xs shrink-0 mt-0.5">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <span class="font-medium text-[0.78rem] leading-tight">My Khanh , Can Tho city, Viet Nam</span>
+          </div>
+
+        </div>
+
+        <!-- EXPERIENCE SECTION -->
+        <div class="pt-2">
+          
+          <!-- Experience Section Header with Line -->
+          <div class="flex items-center gap-4 mb-6">
+            <h2 class="font-heading font-bold text-lg tracking-[0.15em] text-gray-800 uppercase">
+              EXPERIENCE
+            </h2>
+            <div class="flex-grow h-[1px] bg-gray-400"></div>
+          </div>
+
+          <!-- Timeline Items -->
+          <div class="timeline-container space-y-6">
+
+            <!-- Item 1: Software Developer -->
+            <div class="relative pl-3">
+              <div class="timeline-node"></div>
+              <div class="flex justify-between items-baseline">
+                <h3 class="font-bold text-gray-800 text-[0.92rem]">Software Developer</h3>
+                <span class="text-xs italic text-gray-500">2024 – Present</span>
+              </div>
+              <p class="text-xs text-gray-600 font-medium mb-1.5">Student Projects</p>
+              <ul class="list-disc list-inside text-xs text-gray-600 space-y-1">
+                <li>Developed applications using Java, C</li>
+                <li>Applied Object-Oriented Programming (OOP) and data structures</li>
+                <li>Used Git & GitHub for version control</li>
+              </ul>
+            </div>
+
+            <!-- Item 2: Portfolio Website -->
+            <div class="relative pl-3">
+              <div class="timeline-node"></div>
+              <h3 class="font-bold text-gray-800 text-[0.92rem]">Portfolio Website</h3>
+              <p class="text-xs text-gray-600 font-medium mb-1.5">HTML, CSS, JavaScript</p>
+              <ul class="list-disc list-inside text-xs text-gray-600 space-y-1">
+                <li>Designed responsive UI</li>
+                <li>Deployed on GitHub</li>
+              </ul>
+            </div>
+
+            <!-- Item 3: Student Management System -->
+            <div class="relative pl-3">
+              <div class="timeline-node"></div>
+              <h3 class="font-bold text-gray-800 text-[0.92rem]">Student Management System</h3>
+              <p class="text-xs text-gray-600 font-medium mb-1.5">Java</p>
+              <ul class="list-disc list-inside text-xs text-gray-600 space-y-1">
+                <li>Developed a system with features to add, delete, update, search, and display student information.</li>
+                <li>Used Java to manage and process student data.</li>
+                <li>Structured the program using Object-Oriented Programming (OOP) principles.</li>
+              </ul>
+            </div>
+
+            <!-- Item 4: Study Support Page -->
+            <div class="relative pl-3">
+              <div class="timeline-node"></div>
+              <h3 class="font-bold text-gray-800 text-[0.92rem]">Study Support Page (Facebook)</h3>
+              <p class="text-xs text-gray-600 font-medium mb-1.5">Content Manager</p>
+              <ul class="list-disc list-inside text-xs text-gray-600 space-y-1">
+                <li>Shared IT learning materials</li>
+                <li>Supported students with programming questions</li>
+                <li>Managed educational content</li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Bottom Spacer Line -->
+      <div class="border-t border-gray-300 mx-8 mb-6"></div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
