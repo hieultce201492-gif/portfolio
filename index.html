@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Lương Trung Hiếu</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-sidebar: #e9ecef;
+            --bg-header: #2f353a;
+            --text-dark: #212529;
+            --text-muted: #555555;
+            --border-color: #cccccc;
+            --accent-color: #2f353a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f6f8;
+            color: var(--text-dark);
+            line-height: 1.5;
+            padding: 20px 0;
+        }
+
+        /* Container mô phỏng trang A4 / Paper format */
+        .cv-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Top Header Banner */
+        .header-banner {
+            background-color: var(--bg-header);
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 50px;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .header-title {
+            text-align: right;
+        }
+
+        .header-title h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .header-title p {
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            color: #dcdcdc;
+        }
+
+        /* Main Layout Grid */
+        .cv-body {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 1000px;
+        }
+
+        /* Sidebar Left */
+        .sidebar {
+            background-color: var(--bg-sidebar);
+            padding: 0 20px 30px 20px;
+            position: relative;
+            border-right: 1px solid #d0d0d0;
+        }
+
+        /* Avatar Container Overlapping Header */
+        .avatar-wrapper {
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .avatar-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            background-color: #ffffff;
+        }
+
+        .sidebar-content {
+            margin-top: 85px; /* Chừa khoảng trống cho avatar đè lên */
+        }
+
+        /* Section Headings Style */
+        .section-label {
+            display: inline-block;
+            border: 1px solid #999;
+            background-color: #f8f9fa;
+            padding: 4px 15px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .sidebar .section-label {
+            width: 100%;
+            text-align: center;
+        }
+
+        .section-block {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .section-block p, .section-block ul {
+            font-size: 13px;
+            color: #333;
+        }
+
+        .section-block ul {
+            list-style-type: disc;
+            padding-left: 18px;
+        }
+
+        .section-block li {
+            margin-bottom: 5px;
+        }
+
+        .education-title {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        .education-sub {
+            font-size: 12.5px;
+            color: #555;
+        }
+
+        .sidebar-divider {
+            border-bottom: 1px solid #c5c5c5;
+            margin: 18px 0;
+        }
+
+        /* Main Content Right */
+        .main-content {
+            padding: 25px 30px;
+            background-color: #ffffff;
+        }
+
+        /* Contact Info Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 15px;
+            margin-bottom: 25px;
+            font-size: 12.5px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #333;
+        }
+
+        .contact-icon {
+            width: 26px;
+            height: 26px;
+            background-color: #212529;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3px;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .contact-item a {
+            color: #212529;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Title with line divider */
+        .main-section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .main-section-header .section-label {
+            margin-bottom: 0;
+            white-space: nowrap;
+            padding: 5px 18px;
+        }
+
+        .header-line {
+            flex-grow: 1;
+            height: 1px;
+            background-color: #cccccc;
+            margin-left: 15px;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+            border-left: 1.5px solid #777;
+            margin-left: 10px;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Timeline Dot */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            border: 2px solid #333;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 15px;
+            color: #111;
+            margin-bottom: 6px;
+        }
+
+        .project-details {
+            font-size: 13px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .project-details ul {
+            padding-left: 18px;
+            margin-top: 5px;
+        }
+
+        .project-details li {
+            margin-bottom: 6px;
+        }
+
+        /* Coursera Links */
+        .coursera-list {
+            list-style: disc;
+            padding-left: 20px;
+            font-size: 13.5px;
+        }
+
+        .coursera-list li {
+            margin-bottom: 6px;
+        }
+
+        .coursera-list a {
+            color: #0056b3;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        /* Print Optimization */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .cv-container {
+                box-shadow: none;
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        /* Responsive Mobile Layout */
+        @media (max-width: 768px) {
+            .cv-body {
+                grid-template-columns: 1fr;
+            }
+            .header-banner {
+                height: auto;
+                padding: 20px;
+                justify-content: center;
+                text-align: center;
+            }
+            .header-title {
+                text-align: center;
+            }
+            .avatar-wrapper {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+                margin: 20px auto 0 auto;
+                text-align: center;
+            }
+            .sidebar-content {
+                margin-top: 15px;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <!-- Top Dark Header -->
+        <header class="header-banner">
+            <div class="header-title">
+                <h1>LƯƠNG TRUNG HIẾU</h1>
+                <p>Lập trình phần mềm</p>
+            </div>
+        </header>
+
+        <!-- Main Body Grid -->
+        <div class="cv-body">
+            <!-- Sidebar Left -->
+            <aside class="sidebar">
+                <!-- Avatar Circular Image -->
+                <div class="avatar-wrapper">
+                    <img src="https://placehold.co/150x150/d0d7de/333333?text=Avatar" alt="Lương Trung Hiếu" class="avatar-img" onerror="this.src='https://via.placeholder.com/150'">
+                </div>
+
+                <div class="sidebar-content">
+                    <!-- Mục tiêu nghề nghiệp -->
+                    <div class="section-block">
+                        <div class="section-label">MỤC TIÊU NGHỀ NGHIỆP</div>
+                        <p>Sinh viên năm 3 ngành Kỹ thuật phần mềm tại Đại học FPT, có kinh nghiệm thực hành qua các dự án Java Web MVC và ReactJS. Có kiến thức nền tảng về xác thực người dùng, thao tác cơ sở dữ liệu, tích hợp REST API và tài liệu hóa yêu cầu phần mềm. Mong muốn tham gia chương trình OJT để nâng cao kỹ năng chuyên môn và đóng góp vào đội ngũ phát triển phần mềm.</p>
+                    </div>
+
+                    <div class="sidebar-divider"></div>
+
+                    <!-- Học vấn -->
+                    <div class="section-block">
+                        <div class="section-label">HỌC VẤN</div>
+                        <div class="education-title">Đại học FPT Cần Thơ 2024 – Hiện tại</div>
+                        <div class="education-sub">Sinh viên IT - kỹ thuật phần mềm</div>
+                    </div>
+
+                    <div class="sidebar-divider"></div>
+
+                    <!-- Kỹ năng -->
+                    <div class="section-block">
+                        <div class="section-label">KỸ NĂNG</div>
+                        <ul>
+                            <li>Java</li>
+                            <li>JavaScript</li>
+                            <li>ReactJS</li>
+                            <li>C</li>
+                            <li>SQL Server</li>
+                            <li>HTML/CSS</li>
+                            <li>IntelliJ IDEA</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-divider"></div>
+
+                    <!-- Ngôn ngữ -->
+                    <div class="section-block">
+                        <div class="section-label">LANGUAGE</div>
+                        <ul>
+                            <li>Tiếng Anh: trung cấp</li>
+                            <li>Tiếng Nhật: Sơ cấp (Đã hoàn thành A1.2)</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Content Right -->
+            <main class="main-content">
+                <!-- Contact Info -->
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <span>0985360252</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-globe"></i></div>
+                        <a href="https://hieultce201492-gif.github.io/portfolio/" target="_blank">https://hieultce201492-gif.github.io/portfolio/</a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <a href="mailto:hieultce201492@gmail.com">hieultce201492@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <span>Mỹ Khánh, Thành phố Cần Thơ, Việt Nam</span>
+                    </div>
+                </div>
+
+                <!-- Dự án & Kinh nghiệm -->
+                <div class="main-section-header">
+                    <div class="section-label">DỰ ÁN & KINH NGHIỆM</div>
+                    <div class="header-line"></div>
+                </div>
+
+                <div class="timeline">
+                    <!-- Project 1 -->
+                    <div class="timeline-item">
+                        <div class="project-title">BookStore – Online Bookstore Web Application</div>
+                        <div class="project-details">
+                            <ul>
+                                <li><strong>Công nghệ:</strong> ReactJS, Redux Toolkit, React Router DOM, Axios, Bootstrap 5, JSON Server.</li>
+                                <li><strong>Vai trò:</strong> Lập trình viên Frontend (Phụ trách Module Quản lý Sách phía Admin).</li>
+                                <li><strong>Nhiệm vụ cụ thể:</strong>
+                                    <ul>
+                                        <li>Phát triển giao diện và logic hiển thị danh sách sách quản trị (View Admin Books List) với các tính năng tìm kiếm (Search Books In Admin) và lọc theo danh mục (Filter Books By Category In Admin).</li>
+                                        <li>Xây dựng chức năng thêm mới sách (Create New Book) và cập nhật chi tiết sách (Update Book Details) với các biểu mẫu xử lý dữ liệu phức tạp.</li>
+                                        <li>Triển khai tính năng xóa thông tin sách (Delete Book) nhằm đảm bảo tính toàn vẹn dữ liệu trên hệ thống.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="timeline-item">
+                        <div class="project-title">AutoCar Shop Website</div>
+                        <div class="project-details">
+                            <p style="margin-bottom: 6px;">Phân tích yêu cầu nghiệp vụ (Business Rules), thiết kế luồng quy trình bán hàng và tài liệu hóa phần mềm.</p>
+                            <ul>
+                                <li>Xây dựng danh mục Business Rules cho cửa hàng bán ô tô (Quy tắc thanh toán 100%, chính sách giá niêm yết, hóa đơn VAT...).</li>
+                                <li>Phân tích luồng nghiệp vụ đặt mua, xuất hóa đơn, giao xe và quản lý tồn kho theo thời gian thực.</li>
+                                <li>Xác định công thức tính tổng giá trị hợp đồng (bao gồm thuế/phí) và quản lý quy trình đối soát tài chính.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coursera Section -->
+                <div class="main-section-header" style="margin-top: 30px;">
+                    <div class="section-label">coursera</div>
+                    <div class="header-line"></div>
+                </div>
+
+                <ul class="coursera-list">
+                    <li><a href="#" target="_blank">Software Engineering</a></li>
+                    <li><a href="#" target="_blank">User Experience Research and Design</a></li>
+                    <li><a href="#" target="_blank">Web Design for Everybody: Basics of Web Development & Coding</a></li>
+                </ul>
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>
